@@ -1,0 +1,11 @@
+<div class="choice-container">
+    <section class="heroes-container">
+        @for (hero of heroes; track $index) {
+            <app-hero [hero]="hero"
+                [selectHero]="heroselected"
+                (heroSelected)="getselectedHero($event)">
+            </app-hero>
+        }
+    </section>
+    <button class="btn-heroes-choice" (click)="setHero()">Select</button>
+</div>
