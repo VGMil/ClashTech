@@ -2,16 +2,21 @@
     display:flex;
     flex-direction:column;
     align-items:center;
+    justify-content: center;
     gap:10px;
+    height: 100%;
 }
 .heroes-container{
     display: flex;
+    align-items: center;
+    justify-content: center;
     gap:10px;
+    padding: 0 10px;
 }
 
 .btn-heroes-choice{
     margin-top: 30px;
-    width: 100px;
+    width: auto;
     height: 40px;
     background-color: #4e4eff;
     display: flex;
@@ -22,4 +27,10 @@
     font-weight: 700;
     border-radius: 10px;
     font-family: "Pixelify Sans", sans-serif;
+    padding: 0 10px
+}
+@media (max-width: 768px) {
+    .heroes-container {
+        flex-direction: column;
+    }
 }

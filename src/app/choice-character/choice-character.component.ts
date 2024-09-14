@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { Hero } from '../../models/hero';
-import { ChoiceCharacterCase } from '../../uses-cases/choice-character.case';
-import { HeroComponent } from '../hero/hero.component';
+import { Hero } from '../core/models/hero';
+import { HeroComponent } from '../core/components/hero/hero.component';
+import { HeroService } from '../core/services/hero.service';
 
 @Component({
   selector: 'app-choice-character',
@@ -11,11 +11,11 @@ import { HeroComponent } from '../hero/hero.component';
   styleUrl: './choice-character.component.css'
 })
 export class ChoiceCharacterComponent {
-  choiceCharacterCase  = inject(ChoiceCharacterCase);
+  heroService  = inject(HeroService);
   heroselected!: Hero;
   heroes!:Hero[];
   constructor(){
-    this.choiceCharacterCase.getAllCharacters().then((heroes) => {
+    this.heroService.getHeroes().then((heroes) => {
       this.heroes = heroes;
     });
   }
@@ -23,7 +23,7 @@ export class ChoiceCharacterComponent {
     this.heroselected = newHero
   }
   setHero() {
-   this.choiceCharacterCase.setSelectedCharacter(this.heroselected);
+   this.heroService.setHeroSelected(this.heroselected);
   }
   
 }

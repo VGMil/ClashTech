@@ -9,8 +9,8 @@ export class HeroService {
   heroSelected!: Hero;
   constructor() {
     this.heroes = [
-      new Hero('./assets/yellow-warrior.png', 'Guerrero', 100, 35),
       new Hero('./assets/blue-mage.png', 'Mago', 50, 50),
+      new Hero('./assets/yellow-warrior.png', 'Guerrero', 100, 35),
       new Hero('./assets/green-healer.png', 'Curandero', 75, 40)
     ]
     this.heroSelected = this.heroes[0];
