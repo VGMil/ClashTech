@@ -1,10 +1,14 @@
 <section class="hero-container" (click)="onSelect(this.hero)" [class]="getHeroClasses()">
     <img class="hero-img" [src]="hero.getImg()">
     <div class="hero-stats">
-        <p>Vida: </p>
-        <div>{{hero.getHealth()}}</div>
-        <p>Mana: </p>
-        <div>{{hero.getMana()}}</div>
+            <div class="stat-container">
+            <p>Vida: </p>
+            <div class="stat health">{{hero.getHealth()}}</div>
+            </div>
+            <div class="stat-container">
+                <p>Mana:</p>
+                <div class="stat mana">{{hero.getMana()}}</div>
+            </div>
     </div>
     <h3 class="hero-name">{{hero.getName()}}</h3>
 </section>

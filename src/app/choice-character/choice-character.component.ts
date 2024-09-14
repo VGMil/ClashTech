@@ -2,6 +2,7 @@ import { Component, inject } from '@angular/core';
 import { Hero } from '../core/models/hero';
 import { HeroComponent } from '../core/components/hero/hero.component';
 import { HeroService } from '../core/services/hero.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-choice-character',
@@ -12,6 +13,7 @@ import { HeroService } from '../core/services/hero.service';
 })
 export class ChoiceCharacterComponent {
   heroService  = inject(HeroService);
+  router = inject(Router);
   heroselected!: Hero;
   heroes!:Hero[];
   constructor(){
@@ -24,6 +26,7 @@ export class ChoiceCharacterComponent {
   }
   setHero() {
    this.heroService.setHeroSelected(this.heroselected);
+   this.router.navigate(['/dashboard']);
   }
   
 }

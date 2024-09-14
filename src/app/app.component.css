@@ -1,130 +1,61 @@
 .particles-container {
-    z-index: 0;
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
     background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
-
 }
 
 .particle {
-    width: 20px;
-    height: 20px;
-    border: 2px solid gold;
+    width: 2rem;
+    height: 2rem;
     background-color: transparent;
     position: absolute;
-    width: 20px;
-    height: 20px;
     animation: flotar 5s linear infinite;
-    transform: rotate(45deg);
     opacity: 0;
 }
-@keyframes flotar {
-    0% {
-        transform: translateY(0) scale(1) rotate(45deg);
-        opacity: 0.2;
-    }
-    33% {
-        transform: translateY(-50px) scale(1.1) rotate(90deg);
-        opacity: 0.5;
-    }
-    66% {
-        transform: translateY(-75px) scale(1.15) rotate(135deg);
-        opacity: 0.8;
-    }
 
-    100% {
-        transform: translateY(-100px) scale(1.2) rotate(180deg);
-        opacity:0;
-    }
-}
-
-
+/* Estilos comunes para las partículas */
 .particle:nth-child(-n+5) {
-    border-color: #2a2aff;
+    border: 3px solid #2a2aff;
     animation-delay: 0s;
 }
 
-.particle:nth-child(n+5) {
-    border-color: #36ac36;
+.particle:nth-child(n+6):nth-child(-n+10) {
+    border: 3px solid #36ac36;
     animation-delay: 1s;
 }
-.particle:nth-child(n+10){
-    border-color: gold;
+
+.particle:nth-child(n+11) {
+    border: 3px solid rgb(255, 166, 0);
     animation-delay: 2s;
 }
 
-.particle:nth-child(1) {
-    left: 10%;
-    top: 20%;
+/* Posiciones de las partículas */
+.particle:nth-child(1) { left: 10%; top: 20%; transform: rotate(45deg); }
+.particle:nth-child(2) { left: 70%; top: 10%; transform: rotate(90deg); }
+.particle:nth-child(3) { left: 30%; top: 50%; transform: rotate(135deg); }
+.particle:nth-child(4) { left: 90%; top: 70%; transform: rotate(180deg); }
+.particle:nth-child(5) { left: 50%; top: 90%; transform: rotate(225deg); }
+.particle:nth-child(6) { left: 20%; top: 30%; transform: rotate(270deg); }
+.particle:nth-child(7) { left: 80%; top: 60%; transform: rotate(315deg); }
+.particle:nth-child(8) { left: 40%; top: 80%; transform: rotate(360deg); }
+.particle:nth-child(9) { left: 60%; top: 40%; transform: rotate(45deg); }
+.particle:nth-child(10) { left: 15%; top: 15%; transform: rotate(90deg); }
+.particle:nth-child(11) { left: 75%; top: 25%; transform: rotate(135deg); }
+.particle:nth-child(12) { left: 25%; top: 75%; transform: rotate(180deg); }
+.particle:nth-child(13) { left: 85%; top: 45%; transform: rotate(225deg); }
+.particle:nth-child(14) { left: 15%; top: 85%; transform: rotate(270deg); }
+.particle:nth-child(15) { left: 55%; top: 55%; transform: rotate(315deg); }
+
+.app-container { 
+    width: 100%;
+    height: 100%;
 }
 
-.particle:nth-child(2) {
-    left: 70%;
-    top: 10%;
-}
-
-.particle:nth-child(3) {
-    left: 30%;
-    top: 50%;
-}
-
-.particle:nth-child(4) {
-    left: 90%;
-    top: 70%;
-}
-
-.particle:nth-child(5) {
-    left: 50%;
-    top: 90%;
-}
-
-.particle:nth-child(6) {
-    left: 20%;
-    top: 30%;
-}
-
-.particle:nth-child(7) {
-    left: 80%;
-    top: 60%;
-}
-
-.particle:nth-child(8) {
-    left: 40%;
-    top: 80%;
-}
-
-.particle:nth-child(9) {
-    left: 60%;
-    top: 40%;
-}
-
-.particle:nth-child(10) {
-    left: 15%;
-    top: 15%;
-}
-.particle:nth-child(11) {
-    left: 75%;
-    top: 25%;
-}
-
-.particle:nth-child(12) {
-    left: 25%;
-    top: 75%;
-}
-
-.particle:nth-child(13) {
-    left: 85%;
-    top: 45%;
-}
-
-.particle:nth-child(14) {
-    left: 15%;
-    top: 85%;
-}
-
-.particle:nth-child(15) {
-    left: 55%;
-    top: 55%;
+@keyframes flotar {
+    0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.2;  }
+    33% { transform: translateY(-50px) scale(1.1) rotate(30deg); opacity: 0.5;  }
+    66% { transform: translateY(-75px) scale(1.15) rotate(60deg); opacity: 0.8;  }
+    100% { transform: translateY(-100px) scale(1.2) rotate(90deg); opacity: 0;  }
 }
