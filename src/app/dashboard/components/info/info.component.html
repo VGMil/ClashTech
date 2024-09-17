@@ -1,0 +1,13 @@
+<section class="info-container">
+    <div class="hero">
+        HERO
+        <!-- <app-hero [hero]="hero"></app-hero> -->
+    </div>
+    @for (skill of skills; track $index) {
+        <p [class]="'hab'+$index">{{skill}}</p>
+    <!-- <app-hability [class]="'hab'+$index" [hability]="skill"></app-hability> -->
+    }
+    <div class="inventory">Inventario</div>
+</section>
+
+

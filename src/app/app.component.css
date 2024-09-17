@@ -4,6 +4,7 @@
     height: 100%;
     overflow: hidden;
     background: linear-gradient(to bottom, #f0f0f0, #e0e0e0);
+    z-index:-1;
 }
 
 .particle {
@@ -14,8 +15,12 @@
     animation: flotar 5s linear infinite;
     opacity: 0;
 }
+.app-container { 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
 
-/* Estilos comunes para las partículas */
 .particle:nth-child(-n+5) {
     border: 3px solid #2a2aff;
     animation-delay: 0s;
@@ -48,10 +53,7 @@
 .particle:nth-child(14) { left: 15%; top: 85%; transform: rotate(270deg); }
 .particle:nth-child(15) { left: 55%; top: 55%; transform: rotate(315deg); }
 
-.app-container { 
-    width: 100%;
-    height: 100%;
-}
+
 
 @keyframes flotar {
     0% { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.2;  }
