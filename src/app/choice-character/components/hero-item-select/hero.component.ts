@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Hero } from '../../models/hero';
+import { Hero } from '../../../core/models/hero';
 
 @Component({
   selector: 'app-hero',

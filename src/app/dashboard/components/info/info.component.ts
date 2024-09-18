@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { HeroComponent } from '../../../core/components/hero/hero.component';
+import { HeroInfoComponent } from './Components/hero-info/hero-info.component';
 
 @Component({
   selector: 'app-info',
   standalone: true,
-  imports: [HeroComponent],
+  imports: [HeroInfoComponent],
   templateUrl: './info.component.html',
   styleUrl: './info.component.css'
 })

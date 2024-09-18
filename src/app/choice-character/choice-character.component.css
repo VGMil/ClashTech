@@ -28,12 +28,25 @@
     border-radius: 10px;
     font-family: "Pixelify Sans", sans-serif; 
     transition: all 0.3s linear;
+    
 }
 
 .btn-heroes-choice:hover{
     scale:1.1;
     background-color: #3232ac;
     cursor: pointer;
+    animation: bounce 1s infinite cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 @media (max-width: 1024px) {

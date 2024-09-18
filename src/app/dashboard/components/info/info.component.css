@@ -5,7 +5,7 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   gap: 10px 10px;
-  padding: 1rem;
+  padding: 10px;
   box-sizing: border-box;
 
   grid-template-areas:
@@ -17,7 +17,6 @@
 
 .hero {
   grid-area: hero;
-  background-color: #2196F3;
 }
 
 .hab0 {
@@ -30,17 +29,32 @@
   background-color: #FFC107;
 }
 
-.hab3 {
-  grid-area: hab3;
+.hab2 {
+  grid-area: hab2;
   background-color: #F44336;
 }
 
-.hab4 {
-  grid-area: hab4;
+.hab3 {
+  grid-area: hab3;
   background-color: #9C27B0;
 }
 
 .inventory {
   grid-area: inventory;
   background-color: #00BCD4;
+}
+@media (max-width: 1080px) {
+  .info-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-areas:
+      "hero"
+      "hero"
+      "hab0"
+      "hab1"
+      "hab2"
+      "hab3"
+      "inventory"
+      "inventory";
+  }
 }
