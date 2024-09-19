@@ -81,16 +81,17 @@
 
 @keyframes blur {
     0% {
-        background-color: #f00;
+        filter: brightness(1);
     }
 
     50% {
-        background-color: rgb(134, 0, 0);
+        filter: brightness(0.5);
     }
 
     100% {
-        background-color: #f00;
+        filter: brightness(1);
     }
+
 }
 
 @media (max-width: 768px) {
@@ -120,5 +121,13 @@
 
     .hero-name {
         font-size: 1.5rem;
+    }
+}
+@media (max-width: 890px) and (min-width: 768px) {
+    .hero-image img {
+        max-width: 200px;
+        height: 100%;
+        max-height: 300px;
+        padding: 10px;
     }
 }

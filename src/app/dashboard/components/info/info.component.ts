@@ -1,13 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { HeroInfoComponent } from './Components/hero-info/hero-info.component';
+import { SkillComponent } from './Components/skill/skill.component';
+import { HeroModel } from '../../../core/models/heroModel';
+import { HeroService } from '../../../core/services/heroService/hero.service';
+import { SkillService } from '../../../core/services/skillService/skill.service';
+import { SkillModel } from '../../../core/models/skillModel';
 
 @Component({
   selector: 'app-info',
   standalone: true,
-  imports: [HeroInfoComponent],
+  imports: [HeroInfoComponent,SkillComponent],
   templateUrl: './info.component.html',
   styleUrl: './info.component.css'
 })
 export class InfoComponent {
-  skills: string[] = ['Angular', 'TypeScript', 'JavaScript', 'HTML'];
+  heroService = inject(HeroService);
+  skillService = inject(SkillService);
+  hero: HeroModel = this.heroService.getHeroSelected();
+  skills: SkillModel[] = this.skillService.getSkills(this.hero.getName());
 }

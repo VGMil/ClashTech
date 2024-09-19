@@ -1,6 +1,6 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router } from '@angular/router';
-import { HeroService } from '../../core/services/hero.service';
+import { HeroService } from '../../core/services/heroService/hero.service';
 
 
 export const heroSelectedGuard: CanActivateFn = (route, state) => {

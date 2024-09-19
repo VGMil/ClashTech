@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Hero } from '../../../core/models/hero';
+import { HeroModel } from '../../../core/models/heroModel';
 
 @Component({
   selector: 'app-hero',
@@ -11,11 +11,11 @@ import { Hero } from '../../../core/models/hero';
 
 export class HeroComponent {
 
-  @Input({ required: true }) selectHero!: Hero;
-  @Input({ required: true }) hero!: Hero;
-  @Output() heroSelected = new EventEmitter<Hero>();
+  @Input({ required: true }) selectHero!: HeroModel;
+  @Input({ required: true }) hero!: HeroModel;
+  @Output() heroSelected = new EventEmitter<HeroModel>();
 
-  onSelect(hero: Hero) {
+  onSelect(hero: HeroModel) {
     this.heroSelected.emit(hero);
   }
 

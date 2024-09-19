@@ -1,16 +1,23 @@
 <div class="hero-container">
     <div class="hero-image">
-        <img src="./assets/yellow-warrior.png" alt="">
+        <img [src]="hero.getImg()" alt="">
     </div>
     <div class="hero-stats">
         <div class="stat-container">
-            <div class="percentage health blured"></div>
+            <div class="percentage health"
+            [style.width]="getHealth_Percentage()+'%'"
+            [ngClass]="{'blured': getHealth_Percentage() < 25}"
+
+            ></div>
         </div>
-        <p>Total:100/100</p>
+        <p>Total:{{hero.getHealth_Quantity()}}/{{hero.getHealth_Total()}}</p>
         <div class="stat-container">
-            <div class="percentage mana"></div>
+            <div class="percentage mana"
+            [style.width]="getMana_Percentage()+'%'"
+            [ngClass]="{'blured': getMana_Percentage() < 25}"
+            ></div>
         </div>
-        <p>Total:35/35</p>
+        <p>Total:{{hero.getMana_Quantity()}}/{{hero.getMana_Total()}}</p>
     </div>
-    <p class="hero-name"> Warrior </p>
+    <p class="hero-name">{{hero.getName()}}</p>
 </div>

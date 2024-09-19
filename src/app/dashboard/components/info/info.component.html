@@ -1,10 +1,11 @@
 <section class="info-container">
     <div class="hero">
-        <info-hero></info-hero>
+        <info-hero [hero]=hero></info-hero>
     </div>
     @for (skill of skills; track $index) {
-        <p [class]="'hab'+$index">{{skill}}</p>
-    <!-- <app-hability [class]="'hab'+$index" [hability]="skill"></app-hability> -->
+        <div [class]="'hab'+$index">
+            <app-skill [skill]="skill"></app-skill>
+        </div>
     }
     <div class="inventory">Inventario</div>
 </section>

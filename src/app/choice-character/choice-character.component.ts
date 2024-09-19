@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { Hero } from '../core/models/hero';
+import { HeroModel } from '../core/models/heroModel';
 import { HeroComponent } from './components/hero-item-select/hero.component';
-import { HeroService } from '../core/services/hero.service';
+import { HeroService } from '../core/services/heroService/hero.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -14,14 +14,14 @@ import { Router } from '@angular/router';
 export class ChoiceCharacterComponent {
   heroService  = inject(HeroService);
   router = inject(Router);
-  heroselected!: Hero;
-  heroes!:Hero[];
+  heroselected!: HeroModel;
+  heroes!:HeroModel[];
   constructor(){
     this.heroService.getHeroes().then((heroes) => {
       this.heroes = heroes;
     });
   }
-  getselectedHero(newHero:Hero){
+  getselectedHero(newHero:HeroModel){
     this.heroselected = newHero
   }
   setHero() {
