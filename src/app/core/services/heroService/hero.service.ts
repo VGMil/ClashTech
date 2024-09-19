@@ -13,7 +13,7 @@ export class HeroService {
       new HeroModel('./assets/heroes/yellow-warrior.png', 'Guerrero', 100, 35),
       new HeroModel('./assets/heroes/green-healer.png', 'Curandero', 75, 40)
     ]
-    // this.heroSelected=this.heroes[0];
+    this.heroSelected=this.heroes[0];
   }
 
   getHeroes(): Promise<HeroModel[]> {

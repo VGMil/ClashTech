@@ -6,10 +6,11 @@ import { HeroService } from '../../../core/services/heroService/hero.service';
 import { SkillService } from '../../../core/services/skillService/skill.service';
 import { SkillModel } from '../../../core/models/skillModel';
 
+import {ScrollingModule} from '@angular/cdk/scrolling'; 
 @Component({
   selector: 'app-info',
   standalone: true,
-  imports: [HeroInfoComponent,SkillComponent],
+  imports: [HeroInfoComponent,SkillComponent,ScrollingModule],
   templateUrl: './info.component.html',
   styleUrl: './info.component.css'
 })

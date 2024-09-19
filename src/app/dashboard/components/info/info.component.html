@@ -1,13 +1,15 @@
 <section class="info-container">
-    <div class="hero">
+    <div class="info-hero">
         <info-hero [hero]=hero></info-hero>
     </div>
-    @for (skill of skills; track $index) {
-        <div [class]="'hab'+$index">
-            <app-skill [skill]="skill"></app-skill>
-        </div>
-    }
-    <div class="inventory">Inventario</div>
+          <div class="info-skills">
+            <cdk-virtual-scroll-viewport itemSize="50" class="scroll-viewport">
+              <ng-container *cdkVirtualFor="let skill of skills">
+                <div class="skill-item">
+                  <app-skill [skill]="skill"></app-skill>
+                </div>
+              </ng-container>
+            </cdk-virtual-scroll-viewport>
+          </div>
+    <div class="info-inventory">Inventario</div>
 </section>
-
-

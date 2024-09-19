@@ -15,3 +15,9 @@
     height:100%;
     max-height: 720px;
 }
+
+@media (max-width: 764px) {
+    app-header{
+        display:none;
+    }
+}
