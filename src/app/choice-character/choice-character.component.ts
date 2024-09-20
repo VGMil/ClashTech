@@ -24,6 +24,7 @@ export class ChoiceCharacterComponent {
   getselectedHero(newHero:HeroModel){
     this.heroselected = newHero
   }
+  
   setHero() {
    this.heroService.setHeroSelected(this.heroselected);
    this.router.navigate(['/dashboard']);

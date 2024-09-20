@@ -54,6 +54,7 @@
 .percentage {
     height: 2rem;
     width: 50%;
+    transition: 1s width ease;
 }
 
 .health {

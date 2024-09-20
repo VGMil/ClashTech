@@ -6,7 +6,13 @@
             <cdk-virtual-scroll-viewport itemSize="50" class="scroll-viewport">
               <ng-container *cdkVirtualFor="let skill of skills">
                 <div class="skill-item">
-                  <app-skill [skill]="skill"></app-skill>
+                  <app-skill 
+                  [skill]="skill"
+                  [selectedSkill]="skillSelected == skill"
+                  (skillSelected)="getSelectedSkill($event)"
+                  (skillAccepted)="getAcceptedSkill($event)"
+                  [isSkillDenied]="isSkillDenied"
+                ></app-skill>
                 </div>
               </ng-container>
             </cdk-virtual-scroll-viewport>

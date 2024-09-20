@@ -1,4 +1,4 @@
-<div class="skill-container">
+<div class="skill-container" (click)="onSelectSkill($event,skill)">
     <div class="skill-image">
         <img [src]="'./assets/skill-levels/'+level_skill[skill.getTipo()]" alt="">
     </div>
@@ -6,6 +6,15 @@
         <h3 class="skill-type">{{skill.getTipo()}}</h3>
         <p class="skill-name">{{skill.getName()}}</p>
         <p class="skill-desc">{{skill.getDescription()}}</p>
-        <p class="skill-mana">{{skill.getMana()}}</p>
+    </div>
+    <h3 class="skill-mana">{{skill.getMana()}}</h3>
+
+    <div class="actions" *ngIf="selectedSkill && !isSkillDenied"> 
+        <button (click)="acceptSkill($event,skill)" class="action-btn accept">Aceptar</button>
+        <button (click)="cancel($event)" class="action-btn cancel">Cancelar</button>
+      </div>
+    <div class="actions denied" *ngIf="selectedSkill && isSkillDenied"> 
+        <p>No tienes suficiente Mana ...!</p>
+        <button (click)="cancel($event)" class="action-btn cancel">Aceptar</button>
     </div>
 </div>

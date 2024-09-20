@@ -8,8 +8,12 @@
     height: 100%;
     display:flex;
     gap:10px;
+    position:relative;
     align-items:center;
     padding:10px;
+    /* border:3px solid #7575ff80; */
+    border-radius: 10px;
+    /* background-color: #f0f0f080; */
 }
 .skill-image{
     width: 100px;
@@ -26,8 +30,70 @@
     flex-direction: column;
     gap:5px;
 }
+.skill-mana{
+    width:65px;
+    height:50px;
+    border-radius: 50%;
+    background-color: #0000ff80;
+    color:white;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.actions{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top:0;
+    left:0;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:40px;
+    background: #f0f0f090;
+    border-radius: 10px;
+    border:3px solid transparent
+}
+.action-btn{
+    width:30%;
+    height: 4rem;
+    font-size: 2rem;
+    color:white;
+    border-radius: 20px;
+}
+.action-btn:hover{
+    animation: bounce 1s infinite cubic-bezier(0.175, 0.885, 0.32, 1.275)
+}
+.accept{
+    background-color: blue;
+}
+.cancel{
+    background-color: #f0f0f090;
+    border: 3px solid red;
+    color:black;
+}
 
 
+.denied{
+    background-color: #ff000094;
+    flex-direction: column;
+    gap:10px;
+    color:white;
+}
+.denied .action-btn{
+    height:3rem;
+}
+
+.denied p {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.denied .action-btn{
+    color:white;
+    background-color: red;
+}
 @media (max-width: 768px) {
     *{
         font-size: 10px;
@@ -42,5 +108,39 @@
     .skill-image img{
         width: 100%;
         height: 100%;
+    }
+    .skill-mana{
+        width:40px;
+        height:35px;
+        font-size: 1rem;
+    }
+    .action-btn{
+        width:30%;
+        height: 2rem;
+        font-size: 1rem;
+    }
+    .denied{
+        gap:5px;
+    }
+    .denied p {
+        font-size: 1rem;
+        font-weight: 500;
+    }
+    .denied .action-btn{
+        width:30%;
+        height: 2rem;
+    }
+
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
     }
 }

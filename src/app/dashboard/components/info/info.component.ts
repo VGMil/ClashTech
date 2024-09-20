@@ -15,8 +15,27 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
   styleUrl: './info.component.css'
 })
 export class InfoComponent {
+
   heroService = inject(HeroService);
   skillService = inject(SkillService);
   hero: HeroModel = this.heroService.getHeroSelected();
   skills: SkillModel[] = this.skillService.getSkills(this.hero.getName());
+  skillSelected!:SkillModel;
+  isSkillDenied: boolean =false;
+
+  getSelectedSkill(newSkill:SkillModel){
+    if (this.hero.getMana_Quantity() >= newSkill.getMana()) {
+      this.isSkillDenied = false;
+    } else {
+      this.isSkillDenied = true; 
+    }
+    this.skillSelected = newSkill;
+  }
+
+  getAcceptedSkill(acceptedSkill: SkillModel) {
+    if (this.hero.getMana_Quantity() >= acceptedSkill.getMana()) {
+      this.hero.removeMana_Quantity(acceptedSkill.getMana());
+    } 
+    this.skillSelected = new SkillModel();
+  }
 }

@@ -4,7 +4,7 @@ export class SkillModel {
   private mana:number;
   private description:string;
 
-    constructor(tipo:string,name:string,mana:number, description:string){
+    constructor(tipo:string ='',name:string='',mana:number=0, description:string=''){
         this.tipo=tipo;
         this.name=name;
         this.mana=mana;
